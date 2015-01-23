@@ -1,22 +1,46 @@
 <html>
 	<head>
+	<script type="text/javascript" src="paperjs/dist/paper-full.js"></script>
+
 		<title> Voll die Magie! </title>
+
+	<script type="text/paperscript" canvas="myCanvas">
+	
+	var circ1 = new Path.Circle(new Point(200,200), 195);
+	circ1.strokeColor= 'blue';
+	circ1.fillColor= 'yellow';
+	circ1.strokeWidth= 10;
+	circ1.onClic
+	
+	if (circ1.fillColor='yellow'){
+	function onMouseDown (event){
+	circ1.fillColor='green';
+	}}else{
+	function onMouseDown(event){
+	circ1.fillColor='yellow';
+	}};
+
+	</script>
 	</head>
+
+
+
+
 	<body>
 		<h1>First Exchange</h1>
 	<script>
 		function popup(){
 		alert('Sexy');
-		}
-	
-
-			
+		}		
 	</script>
-
-	<img src="http://vignette3.wikia.nocookie.net/ttff/images/c/c4/Noob.jpg/revision/latest?cb=20130516031322" onclick=popup();>
 	
 
+		<!--img src="http://vignette3.wikia.nocookie.net/ttff/images/c/c4/Noob.jpg/revision/latest?cb=20130516031322" onclick=popup();-->
+	
 
+	
+	<canvas id="myCanvas" resize>
+	</canvas>
 
 	</body>
 </html>
