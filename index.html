@@ -3,14 +3,34 @@
 	<script type="text/javascript" src="paperjs/dist/paper-full.js"></script>
 
 		<title> Voll die Magie! </title>
-
-	<script type="text/paperscript" canvas="myCanvas">
+	<script>
+		function popup(){
+		alert(unescape("Hihihi M%F6pse%21%0A"));
+		}	
+		
+		function secret(){
+		var secret = prompt ("Gib das Passwort ein!","Passwort")
+		if (secret == "winfo"){
+		location.replace('secret.html');	
+		}else{
+		alert("Falsches passwort!")
+		return;
+		}}
+		
 	
+	</script>
+	<script type="text/paperscript" canvas="myCanvas">
 		var circ1 = new Path.Circle(new Point(800,200), 195);
 		circ1.strokeColor= 'black';
 		circ1.fillColor= '#FF1493';
 		circ1.strokeWidth= 5;
-		
+	
+		function onKeyDown(event){
+		if (event.key == 's'){
+		secret();
+		return false;
+		}} 		
+	
 		function onMouseDown (event){
 			var circ2 =new Path.Circle(new Point(1200,300),195);
 			circ2.strokeColor='blue';
@@ -21,7 +41,6 @@
 			circ3.strokeColor='blue';
 			circ3.strokeWidth= 20;
 			circ3.fillColor='yellow';
-
 
 			var circ4 =new Path.Circle(new Point(1200,300),70);
 			circ4.strokeColor='blue';
@@ -46,16 +65,20 @@
 			var path1 = new Path.Line(new Point(700,90),new Point(770,110))
 			path1.strokeWidth=5;
 			path1.strokeColor='black';
+			path1.strokeCap='round';
 	
 			var path2 = new Path.Line(new Point(830,110),new Point(900,90))
 			path2.strokeWidth=5;
 			path2.strokeColor='black';		
-
+			path2.strokeCap='round';
+	
 			var path3 = new Path.Line(new Point(700,290),new Point(900,260))
 			path3.strokeWidth=5;
 			path3.strokeColor='black';
-
+			path3.strokeCap='butt';
+	
 			circ1.fillColor='red';
+			popup();	
 		}
 	</script>
 </head>
@@ -65,11 +88,7 @@
 
 <body>
 		<h1>First Exchange</h1>
-	<script>
-		function popup(){
-		alert(unescape("Hihihi M%F6pse%21%0A"));
-		}		
-	</script>
+
 	
 	<canvas id="myCanvas" resize>
 	</canvas>
